@@ -67,7 +67,7 @@ async def get_entry(entry_id: str, entry_service: EntryService = Depends(get_ent
     """
     result = await entry_service.get_entry(entry_id=entry_id)
     if result is None:
-        raise HTTPException(status_code==404, detail="Not found")
+        raise HTTPException(status_code=404, detail="Not found")
     return result
 
 @router.patch("/entries/{entry_id}")
